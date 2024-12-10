@@ -1,0 +1,16 @@
+* {
+  box-sizing: border-box;
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 300;
+  font-style: normal;
+}
+
+body {
+  background-color: #353a40 !important;
+  /* background-color: #E0BCCC !important; */
+}
+
+.container {
+  background-color: #91a5a7;
+  /* background-color: #EBC5BD; */
+}

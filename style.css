@@ -1,0 +1,144 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'montserrat', sans-serif;
+}
+
+.logo {
+  height: 100px;
+  width: 100px;
+}
+
+.alert {
+  width: 70%;
+  margin: auto;
+}
+
+
+
+.card {
+  opacity: 0.9;
+}
+
+
+/* LOGO */
+.logo-container {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 80vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: -1;
+  opacity: 0.8;
+}
+
+.gear {
+  width: 40%;
+  height: auto;
+  animation: rotateGear 15s linear infinite;
+}
+
+.inner-logo {
+  position: absolute;
+  width: 40.5%;
+  height: auto;
+  z-index: 1;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+@keyframes rotateGear {
+  from {
+    transform: rotate(0deg);
+  }
+
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+/* LOGO */
+
+
+.container-fluid {
+  position: relative;
+  z-index: 1;
+  min-height: 100vh;
+  padding-bottom: 40px;
+}
+
+
+
+body {
+  background-color: #ffffff;
+}
+
+.card-header {
+  background-color: #eceab1;
+}
+
+.card-body {
+  background-color: #d4d4d4;
+}
+
+.card-footer {
+  background-color: #8e8f8e;
+}
+
+.c-item {
+  height: 420px;
+}
+
+.c-img {
+  height: 100%;
+  object-fit: fill;
+}
+
+.carousel-caption h5 {
+  font-size: 40px;
+  color: black;
+
+
+}
+
+.carousel-caption p {
+  font-size: 30px;
+  color: black;
+}
+
+.carousel-indicators button {
+  background-color: #000000;
+  border: none;
+  opacity: 1;
+}
+
+
+.carousel-indicators .active {
+  background-color: #000;
+  opacity: 4;
+}
+
+footer {
+  background-color: #575656;
+}
+
+.icon {
+  border: 2px solid red;
+  border-radius: 50%;
+  padding: 20px;
+}
+
+.overdue {
+  color: red;
+  font-weight: bold;
+  font-style: italic;
+}
+
+#chartContainer {
+  height: 100vh;
+}
