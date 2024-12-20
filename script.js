@@ -18,9 +18,9 @@ document.addEventListener('DOMContentLoaded', function () {
   function saveData() {
     localStorage.setItem('taskManagementData', JSON.stringify(data));
   }
+
   // CHART
   function renderChart() {
-
     if (!window.CanvasJS) return;
 
 
@@ -32,7 +32,6 @@ document.addEventListener('DOMContentLoaded', function () {
         label: team.name
       };
     });
-
 
     let chart = new CanvasJS.Chart("chartContainer", {
       animationEnabled: true,
@@ -53,9 +52,45 @@ document.addEventListener('DOMContentLoaded', function () {
       }]
     });
 
-
     chart.render();
+
+
+    let totalTasks = 0;
+    let totalCompleted = 0;
+
+    data.teams.forEach(team => {
+      team.members.forEach(member => {
+        if (member.task) {
+          totalTasks++;
+          if (member.task.status === 'Completed') {
+            totalCompleted++;
+          }
+        }
+      });
+    });
+
+    let overallCompletionPercentage = totalTasks > 0 ? Math.round((totalCompleted / totalTasks) * 100) : 0;
+
+    let overallChart = new CanvasJS.Chart("overallChartContainer", {
+      animationEnabled: true,
+      theme: "light2",
+      title: {
+        text: "Overall Task Progress"
+      },
+      data: [{
+        type: "pie",
+        showInLegend: true,
+        toolTipContent: "{name}: {y}%",
+        dataPoints: [
+          { y: overallCompletionPercentage, name: "Completed Tasks", color: "green" },
+          { y: 100 - overallCompletionPercentage, name: "Incomplete Tasks", color: "red" }
+        ]
+      }]
+    });
+
+    overallChart.render();
   }
+
 
 
   function renderTeams() {
