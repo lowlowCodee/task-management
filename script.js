@@ -400,22 +400,22 @@ document.addEventListener('DOMContentLoaded', function () {
   }
 
   function checkOverdueTasks() {
-    let today = new Date(); // Get the current date
+    let today = new Date();
 
     data.teams.forEach(team => {
       team.members.forEach(member => {
         member.tasks.forEach(task => {
           let taskDueDate = new Date(task.dueDate);
           if (taskDueDate < today && task.status !== "Completed") {
-            // Mark as overdue if the task is past its due date and not completed
+
             task.status = "Overdue";
           }
         });
       });
     });
 
-    saveData(); // Update localStorage if needed
-    renderTeams(); // Re-render UI with updated status
+    saveData();
+    renderTeams();
   }
 
 
